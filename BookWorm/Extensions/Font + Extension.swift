@@ -1,10 +1,3 @@
-//
-//  Fonts + Extension.swift
-//  BookWorm
-//
-//  Created by Евгений on 25.12.2023.
-//
-
 import SwiftUI
 
 extension Font {
