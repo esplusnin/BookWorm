@@ -14,7 +14,7 @@
 		7E67BF262B398D4A0012B02C /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF252B398D4A0012B02C /* Color + Extension.swift */; };
 		7E67BF282B3990860012B02C /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF272B3990860012B02C /* Font + Extension.swift */; };
 		7E67BF2E2B399AA40012B02C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E67BF302B399AA40012B02C /* Localizable.strings */; };
-		7E67BF352B39A3120012B02C /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF342B39A3120012B02C /* Strings+Generated.swift */; };
+		7E67BF382B39AB1F0012B02C /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF372B39AB1F0012B02C /* Strings+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		7E67BF272B3990860012B02C /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
 		7E67BF2F2B399AA40012B02C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E67BF312B399AC10012B02C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7E67BF342B39A3120012B02C /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		7E67BF372B39AB1F0012B02C /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 		7E67BF2B2B3999C10012B02C /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				7E67BF342B39A3120012B02C /* Strings+Generated.swift */,
+				7E67BF372B39AB1F0012B02C /* Strings+Generated.swift */,
 				7E67BF302B399AA40012B02C /* Localizable.strings */,
 			);
 			path = Localization;
@@ -127,6 +127,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E67BF1F2B3989630012B02C /* Build configuration list for PBXNativeTarget "BookWorm" */;
 			buildPhases = (
+				7E67BF362B39A4B40012B02C /* SwiftLint */,
 				7E67BF2A2B3999790012B02C /* SwiftGen */,
 				7E67BF0D2B3989610012B02C /* Sources */,
 				7E67BF0E2B3989610012B02C /* Frameworks */,
@@ -191,7 +192,7 @@
 		7E67BF2A2B3999790012B02C /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -203,9 +204,28 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n    swiftgen\nelse\n  echo \"warning: swiftgen not installed\"\nfi\n";
+		};
+		7E67BF362B39A4B40012B02C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -214,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E67BF352B39A3120012B02C /* Strings+Generated.swift in Sources */,
+				7E67BF382B39AB1F0012B02C /* Strings+Generated.swift in Sources */,
 				7E67BF282B3990860012B02C /* Font + Extension.swift in Sources */,
 				7E67BF172B3989610012B02C /* ContentView.swift in Sources */,
 				7E67BF152B3989610012B02C /* BookWormApp.swift in Sources */,
@@ -275,7 +295,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -339,7 +359,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
