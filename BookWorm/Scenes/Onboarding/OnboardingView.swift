@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @State private var currentPage = 0
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -36,11 +39,18 @@ struct OnboardingView: View {
                         .scaledToFit()
                         .padding(.horizontal, 112)
                     
-                    Text(L10n.Onboarding.firstText)
-                        .font(.largeBodyFont)
-                        .padding(.horizontal, 30)
-                        .lineLimit(3)
-                        .multilineTextAlignment(.center)
+                    ZStack {
+                        Rectangle()
+                            .frame(width: geo.frame(in: .global).width, height: 75)
+                            .foregroundStyle(.clear)
+                        Text(L10n.Onboarding.firstText)
+                            .font(.largeBodyFont)
+                            .padding(.horizontal, 30)
+                            .lineLimit(3)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                    OnboardingPageControlView(pageNumber: $currentPage)
                     
                     Button(L10n.Onboarding.buttonTitle) {
                         
@@ -49,7 +59,7 @@ struct OnboardingView: View {
                     .background(.black)
                     .clipShape(.rect(cornerRadius: 5))
                     .foregroundStyle(Color.regularWhite)
-                    .padding(.top, 87)
+                    .padding(.top, 57)
                     .padding(.bottom, 68)
                 }
             }
