@@ -1,2 +1,6 @@
-"hello" = "hello";
-"mamo" = "mamo";
+"onboarding.firstText" = "Read more and stress less with our online book shopping app. Shop from anywhere you are and discover titles that you love. Happy reading!";
+"onboarding.secondText" = "Put your favourite books into basket and buy it later. Thousands books in your pocket";
+"onboarding.thirdText" = "We provide you a lot of books in different categoriest. Are you interested in?";
+"onboarding.buttonTitle" = "Get started";
+
+

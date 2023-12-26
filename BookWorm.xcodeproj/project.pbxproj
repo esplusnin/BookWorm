@@ -15,6 +15,9 @@
 		7E67BF282B3990860012B02C /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF272B3990860012B02C /* Font + Extension.swift */; };
 		7E67BF2E2B399AA40012B02C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E67BF302B399AA40012B02C /* Localizable.strings */; };
 		7E67BF382B39AB1F0012B02C /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67BF372B39AB1F0012B02C /* Strings+Generated.swift */; };
+		7EB31AFE2B39CAA50080561A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB31AFD2B39CAA50080561A /* OnboardingView.swift */; };
+		7EB31B032B39D7D60080561A /* OnboardingPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB31B022B39D7D60080561A /* OnboardingPageControlView.swift */; };
+		7EB31B062B39D8C90080561A /* OnboardingPageControlCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB31B052B39D8C90080561A /* OnboardingPageControlCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		7E67BF2F2B399AA40012B02C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E67BF312B399AC10012B02C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E67BF372B39AB1F0012B02C /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		7EB31AFD2B39CAA50080561A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		7EB31B022B39D7D60080561A /* OnboardingPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageControlView.swift; sourceTree = "<group>"; };
+		7EB31B052B39D8C90080561A /* OnboardingPageControlCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageControlCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		7E67BF222B398D150012B02C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7EB31AFC2B39CA960080561A /* Onboarding */,
 				7E67BF162B3989610012B02C /* ContentView.swift */,
 			);
 			path = Scenes;
@@ -118,6 +125,32 @@
 				7E67BF292B3998EC0012B02C /* Resources */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7EB31AFC2B39CA960080561A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7EB31AFF2B39D67E0080561A /* Views */,
+				7EB31AFD2B39CAA50080561A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7EB31AFF2B39D67E0080561A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EB31B042B39D8AF0080561A /* OnboardingPageControlView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7EB31B042B39D8AF0080561A /* OnboardingPageControlView */ = {
+			isa = PBXGroup;
+			children = (
+				7EB31B022B39D7D60080561A /* OnboardingPageControlView.swift */,
+				7EB31B052B39D8C90080561A /* OnboardingPageControlCellView.swift */,
+			);
+			path = OnboardingPageControlView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB31B032B39D7D60080561A /* OnboardingPageControlView.swift in Sources */,
 				7E67BF382B39AB1F0012B02C /* Strings+Generated.swift in Sources */,
+				7EB31B062B39D8C90080561A /* OnboardingPageControlCellView.swift in Sources */,
 				7E67BF282B3990860012B02C /* Font + Extension.swift in Sources */,
 				7E67BF172B3989610012B02C /* ContentView.swift in Sources */,
+				7EB31AFE2B39CAA50080561A /* OnboardingView.swift in Sources */,
 				7E67BF152B3989610012B02C /* BookWormApp.swift in Sources */,
 				7E67BF262B398D4A0012B02C /* Color + Extension.swift in Sources */,
 			);

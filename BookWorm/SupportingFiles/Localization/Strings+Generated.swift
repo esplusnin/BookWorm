@@ -10,10 +10,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// hello
-  internal static let hello = L10n.tr("Localizable", "hello", fallback: "hello")
-  /// mamo
-  internal static let mamo = L10n.tr("Localizable", "mamo", fallback: "mamo")
+  internal enum Onboarding {
+    /// Get started
+    internal static let buttonTitle = L10n.tr("Localizable", "onboarding.buttonTitle", fallback: "Get started")
+    /// Read more and stress less with our online book shopping app. Shop from anywhere you are and discover titles that you love. Happy reading!
+    internal static let firstText = L10n.tr("Localizable", "onboarding.firstText", fallback: "Read more and stress less with our online book shopping app. Shop from anywhere you are and discover titles that you love. Happy reading!")
+    /// Put your favourite books into basket and buy it later. Thousands books in your pocket
+    internal static let secondText = L10n.tr("Localizable", "onboarding.secondText", fallback: "Put your favourite books into basket and buy it later. Thousands books in your pocket")
+    /// We provide you a lot of books in different categoriest. Are you interested in?
+    internal static let thirdText = L10n.tr("Localizable", "onboarding.thirdText", fallback: "We provide you a lot of books in different categoriest. Are you interested in?")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
