@@ -10,18 +10,18 @@ import SwiftUI
 struct OnboardingPageControlView: View {
     
     // MARK: - Binding:
-    @Binding var pageNumber: Int
+    @EnvironmentObject private var viewModel: OnboardingViewModel
     
     // MARK: - UI:
     var body: some View {
         HStack(spacing: 4) {
-            OnboardingPageControlCellView(currentPage: $pageNumber, index: 0)
-            OnboardingPageControlCellView(currentPage: $pageNumber, index: 1)
-            OnboardingPageControlCellView(currentPage: $pageNumber, index: 2)
+            OnboardingPageControlCellView(index: 0)
+            OnboardingPageControlCellView(index: 1)
+            OnboardingPageControlCellView(index: 2)
         }
     }
 }
 
 #Preview {
-    OnboardingPageControlView(pageNumber: .constant(2))
+    OnboardingPageControlView()
 }

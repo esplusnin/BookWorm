@@ -18,7 +18,7 @@ struct OnboardingPageControlCellView: View {
     }
     
     // MARK: - Bindings:
-    @Binding var currentPage: Int
+    @EnvironmentObject private var viewModel: OnboardingViewModel
     
     // MARK: - Constants and Variables:
     var index: Int
@@ -26,15 +26,15 @@ struct OnboardingPageControlCellView: View {
     // MARK: - UI:
     var body: some View {
         RoundedRectangle(cornerRadius: UIConstants.cornerRadius)
-            .foregroundStyle(index == currentPage ? .black : .gray)
+            .foregroundStyle(index == viewModel.currentPage ? .black : .gray)
             .frame(
-                width: index == currentPage ?
+                width: index == viewModel.currentPage ?
                 UIConstants.activeWidth : UIConstants.inactiveWidth,
                 height: UIConstants.heigth)
-            .animation(.spring(duration: 0.5, bounce: 0.5), value: index == currentPage)
+            .animation(.spring(duration: 0.5, bounce: 0.5), value: index == viewModel.currentPage)
     }
 }
 
 #Preview {
-    OnboardingPageControlCellView(currentPage: .constant(2), index: 2)
+    OnboardingPageControlCellView(index: 2)
 }
