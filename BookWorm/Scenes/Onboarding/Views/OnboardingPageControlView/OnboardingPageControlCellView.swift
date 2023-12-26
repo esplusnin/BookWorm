@@ -17,7 +17,7 @@ struct OnboardingPageControlCellView: View {
         static let cornerRadius: CGFloat = 10
     }
     
-    // MARK: - Binding:
+    // MARK: - Bindings:
     @Binding var currentPage: Int
     
     // MARK: - Constants and Variables:
@@ -31,6 +31,7 @@ struct OnboardingPageControlCellView: View {
                 width: index == currentPage ?
                 UIConstants.activeWidth : UIConstants.inactiveWidth,
                 height: UIConstants.heigth)
+            .animation(.spring(duration: 0.5, bounce: 0.5), value: index == currentPage)
     }
 }
 

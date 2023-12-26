@@ -24,7 +24,7 @@ struct OnboardingView: View {
                                height: geo.frame(in: .global).height / 2,
                                alignment: .top)
                         .overlay {
-                            LinearGradient(colors: [.white.opacity(0.3), .clear], 
+                            LinearGradient(colors: [.white.opacity(0.3), .clear],
                                            startPoint: .topLeading, endPoint: .bottom)
                         }
                     
@@ -39,16 +39,19 @@ struct OnboardingView: View {
                         .scaledToFit()
                         .padding(.horizontal, 112)
                     
-                    ZStack {
-                        Rectangle()
-                            .frame(width: geo.frame(in: .global).width, height: 75)
-                            .foregroundStyle(.clear)
-                        Text(L10n.Onboarding.firstText)
-                            .font(.largeBodyFont)
-                            .padding(.horizontal, 30)
-                            .lineLimit(3)
-                            .multilineTextAlignment(.center)
+                    TabView(selection: $currentPage) {
+                        ForEach(1..<4) { _ in
+                            Text(L10n.Onboarding.firstText)
+                                .font(.largeBodyFont)
+                                .padding(.horizontal, 30)
+                                .lineLimit(3)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(width: geo.frame(in: .global).width, height: 75)
                     }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(width: geo.frame(in: .global).width,
+                           height: 75)
                     
                     OnboardingPageControlView(pageNumber: $currentPage)
                     
