@@ -9,6 +9,22 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    // MARK: - Constants and variables:
+    enum UIConstants {
+        static let vStackSpacing: CGFloat = 20
+        static let imageHorizontalPadding: CGFloat = 112
+        static let textHorizontalPadding: CGFloat = 30
+        static let buttonTopPadding: CGFloat = 57
+        static let buttonBottomPadding: CGFloat = 68
+        
+        static let gradientStartOpacity: CGFloat = 0.3
+        static let textHeigth: CGFloat = 75
+        static let textLineLimit = 3
+        static let buttonWidth: CGFloat = 320
+        static let buttonHeigth: CGFloat = 56
+        static let buttonCornerRadius: CGFloat = 5
+    }
+    
     @State private var currentPage = 0
     
     var body: some View {
@@ -24,46 +40,47 @@ struct OnboardingView: View {
                                height: geo.frame(in: .global).height / 2,
                                alignment: .top)
                         .overlay {
-                            LinearGradient(colors: [.white.opacity(0.3), .clear],
-                                           startPoint: .topLeading, endPoint: .bottom)
+                            LinearGradient(
+                                colors: [.white.opacity(UIConstants.gradientStartOpacity), .clear],
+                                startPoint: .topLeading,
+                                endPoint: .bottom)
                         }
                     
                     Spacer()
                 }
                 
-                VStack(spacing: 20) {
+                VStack(spacing: UIConstants.vStackSpacing) {
                     Spacer()
                     
                     Image(.onboardingLogo)
                         .resizable()
                         .scaledToFit()
-                        .padding(.horizontal, 112)
+                        .padding(.horizontal, UIConstants.imageHorizontalPadding)
                     
                     TabView(selection: $currentPage) {
                         ForEach(1..<4) { _ in
                             Text(L10n.Onboarding.firstText)
                                 .font(.largeBodyFont)
-                                .padding(.horizontal, 30)
-                                .lineLimit(3)
+                                .padding(.horizontal, UIConstants.textHorizontalPadding)
+                                .lineLimit(UIConstants.textLineLimit)
                                 .multilineTextAlignment(.center)
                         }
-                        .frame(width: geo.frame(in: .global).width, height: 75)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .frame(width: geo.frame(in: .global).width,
-                           height: 75)
+                           height: UIConstants.textHeigth)
                     
                     OnboardingPageControlView(pageNumber: $currentPage)
                     
                     Button(L10n.Onboarding.buttonTitle) {
                         
                     }
-                    .frame(width: 320, height: 56)
+                    .frame(width: UIConstants.buttonWidth, height: UIConstants.buttonHeigth)
                     .background(.black)
-                    .clipShape(.rect(cornerRadius: 5))
+                    .clipShape(.rect(cornerRadius: UIConstants.buttonCornerRadius))
                     .foregroundStyle(Color.regularWhite)
-                    .padding(.top, 57)
-                    .padding(.bottom, 68)
+                    .padding(.top, UIConstants.buttonTopPadding)
+                    .padding(.bottom, UIConstants.buttonBottomPadding)
                 }
             }
             .ignoresSafeArea()
