@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // MARK: - UI:
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        OnboardingView(viewModel: OnboardingViewModel())
     }
 }
 
